@@ -11,6 +11,11 @@ export default function QueryProcessor(query: string): string {
       "that's me -- testing"
     );
   }
+  else if (query.toLowerCase().includes("What is your name?")) {
+    return (
+      "Mahima"
+    );
+  }
 
   return "";
 }
