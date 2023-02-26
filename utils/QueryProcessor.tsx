@@ -16,6 +16,25 @@ export default function QueryProcessor(query: string): string {
       "Mahima"
     );
   }
+  else if (query.toLowerCase().includes("largest")) {
+    var str = query.toLowerCase();
+    var matches = str.match(/(\d+)/);
+    if (matches == null) {
+      return (
+        "Mahima"
+      );
+    }
+
+    var numArray = []
+    var length = matches?.length;
+    for (var i = 0; i < length; i++)
+      numArray.push(parseInt(matches[i]));
+
+    const max = Math.max.apply(null, numArray) + "";
+    return (
+      max
+    );
+  }
 
   return "";
 }
