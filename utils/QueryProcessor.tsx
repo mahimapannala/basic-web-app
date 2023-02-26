@@ -18,7 +18,7 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("largest")) {
     var str = query.toLowerCase();
-    var matches = str.match(/\d+/);
+    var matches = str.match(/\d+/g);
     console.log(matches);
     if (matches == null) {
       return (
@@ -29,8 +29,10 @@ export default function QueryProcessor(query: string): string {
     var numArray = []
     var length = matches?.length;
     var maxVal = 0
-    for (var i = 0; i < length; i++)
+    for (var i = 0; i < length; i++) {
       numArray.push(parseInt(matches[i]));
+      console.log(i)
+    }
 
 
     const max = Math.max.apply(null, numArray) + "";
@@ -40,7 +42,7 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("plus")) {
     var str = query.toLowerCase();
-    var matches = str.match(/\d+/);
+    var matches = str.match(/\d+/g;
     console.log(matches);
     if (matches == null) {
       return (
@@ -55,8 +57,10 @@ export default function QueryProcessor(query: string): string {
         "Mahima"
       );
     }
-    for (var i = 0; i < length; i++)
+    for (var i = 0; i < length; i++) {
       numArray.push(parseInt(matches[i]));
+      console.log(i);
+    }
 
     const add = numArray[0] + numArray[1] + "";
     return (
