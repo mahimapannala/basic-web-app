@@ -17,7 +17,8 @@ export default function QueryProcessor(query: string): string {
     );
   }
   else if (query.toLowerCase().includes("largest")) {
-    var str = query.toLowerCase();
+    var str = query;
+    console.log(query);
     var matches = str.match(/\d+/g);
     console.log(matches);
     if (matches == null) {
@@ -31,7 +32,6 @@ export default function QueryProcessor(query: string): string {
     var maxVal = 0
     for (var i = 0; i < length; i++) {
       numArray.push(parseInt(matches[i]));
-      console.log(i)
     }
 
 
@@ -42,7 +42,7 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("plus")) {
     var str = query.toLowerCase();
-    var matches = str.match(/\d+/g;
+    var matches = str.match(/\d+/g);
     console.log(matches);
     if (matches == null) {
       return (
@@ -59,7 +59,6 @@ export default function QueryProcessor(query: string): string {
     }
     for (var i = 0; i < length; i++) {
       numArray.push(parseInt(matches[i]));
-      console.log(i);
     }
 
     const add = numArray[0] + numArray[1] + "";
