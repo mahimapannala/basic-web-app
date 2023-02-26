@@ -35,6 +35,30 @@ export default function QueryProcessor(query: string): string {
       max
     );
   }
+  else if (query.toLowerCase().includes("plus")) {
+    var str = query.toLowerCase();
+    var matches = str.match(/(\d+)/);
+    if (matches == null) {
+      return (
+        "Mahima"
+      );
+    }
+
+    var numArray = []
+    var length = matches?.length;
+    if (length != 2) {
+      return (
+        "Mahima"
+      );
+    }
+    for (var i = 0; i < length; i++)
+      numArray.push(parseInt(matches[i]));
+
+    const add = numArray[0] + numArray[1] + "";
+    return (
+      add
+    );
+  }
 
   return "";
 }
